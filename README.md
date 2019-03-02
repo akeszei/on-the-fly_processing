@@ -1,2 +1,17 @@
 # on-the-fly_processing
-A series of scripts to copy, process, and view micrographs on-the-fly during data collection.
+
+Designed for operation during single particle cryo-EM data collection on HMS Polara and F20 microscopes, these scripts are easily ported to work on any setup by modifying microscope specifications and programs called in 'proc_loop.sh' file. 
+
+General dependencies for these scripts are: 
+  (i) bash version 4+
+  (ii) python v.3
+  (iii) MotionCor2 installed and in $PATH as 'MotionCor2'
+  (iv) CTFFIND4 installed and in $PATH as 'ctffind' 
+
+Together, these scripts enable easy file copying, micrograph image processing, and viewing on-the-fly:
+
+(1) copy_loop.sh = Continuously copy new files using 'cp' or 'rsync' to a destination directory. Rsync supports copying over ssh protocol to remote workstations. The current implementation copies entire sub-directories and does not check for a minimum image size prior to copying. 
+
+(2) proc_loop.sh = Continuously find files of a specified name (e.g. Micrograph_name_####.tif) and process them for motion correction and CTF estimation. Results are stored in a 'on-the-fly_processing' sub-directory from the current working directory and key data are printed to output and into a 'on-the-fly_data.log' file.
+
+(3) on-the-fly_logviewer.py = Reads from a given 'on-the-fly_data.log' file to retrieve .GIF images of the corrected micrograph and its corresponding FFT/CTF fit for visual inspection. Once a log file is loaded images can be sequentially viewed using the <left> and <right> arrow keys or manually viewed by typing any number into the bottom right widget. The current loaded image can be marked for deletion by using the <d> hotkey and the list of marked images (as #### values) printed out into a 'bad_mics.txt' file with <Ctrl> + <s> or using the drop down menus. 
