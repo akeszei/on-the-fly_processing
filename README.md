@@ -1,6 +1,6 @@
 # on-the-fly_processing
 
-Designed for operation during single particle cryo-EM data collection on HMS Polara and F20 microscopes, these scripts are easily ported to work on any setup by modifying microscope specifications and programs called in 'proc_loop.sh' file. 
+Designed for operation during single particle cryo-EM data collection on HMS Polara and F20 microscopes, these scripts are easily ported to work on any setup by modifying microscope specifications and programs called 'proc_loop.sh'. 
 
 General dependencies for these scripts are: 
   (i) bash version 4+
