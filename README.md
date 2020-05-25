@@ -21,9 +21,7 @@ Together, these scripts enable easy file copying, micrograph image processing, a
 (5) <b>GIF_particle_boxer_v1.py</b> = Run this in a directory of .GIF image files derived from an EM dataset to view .GIF files sequentially. Files can be marked and marked files written to a file for later use on the commandline (e.g. copy marked images, delete marked images ...) . This program supports manually picking coordinates (note: there will be some inaccuraccy if the .GIF image is highly compressed), and unpicking coordinates using EMAN2 .BOX format files. Particle coordinate operations require proper input of .MRC image file dimensions.
 
         Left click = Pick / unpick coordinates
-
         Middle click = Hide image markup to view image below 
-
         Right click = Erase using a brush (green square), hold and drag to erase many coordinates at once
         Mouse scroll = Increase / decrease brush size 
         'd' = Mark current image (marked images are highlighted with a red border
